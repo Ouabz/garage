@@ -2,7 +2,7 @@
 <html>
 <b> Vehicule total: </b>
 <?php
-require('core/VehiculeManager.php');
+require('core/VehiculeManager.class.php');
 $vh = new VehiculeManager();
 echo $vh->CountVehicule()
 ?>

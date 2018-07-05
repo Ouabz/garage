@@ -189,7 +189,7 @@ echo "error".$e->getMessage();
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                
+                                <div class="g-recaptcha" data-sitekey="6LcbrGIUAAAAAF8TI7ZA83kSEopvzNQ4ScA5W8Vl"></div>
                                 <button type="submit" name="signin" class="btn btn-success btn-lg btn-block">
 
                                     Se connecter
@@ -368,6 +368,7 @@ echo "error".$e->getMessage();
 </div>
 <!--/#app -->
 <script src="assets/js/app.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <!--
 --- Footer Part - Use Jquery anywhere at page.
 --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/

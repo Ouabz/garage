@@ -1,4 +1,4 @@
-<?php require_once("core/VehiculeManager.php"); ?>
+<?php require_once("core/autoloader.php"); ?>
 <!DOCTYPE html>
 <html lang="zxx">
 

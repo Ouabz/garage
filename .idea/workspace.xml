@@ -95,7 +95,7 @@
       <path value="$PROJECT_DIR$/last2/insta/admin/node_modules/bulma/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-68" />
     <option name="y" value="304" />
     <option name="width" value="1924" />
@@ -163,16 +163,15 @@
       <workItem from="1530724401718" duration="2620000" />
       <workItem from="1530810950589" duration="107000" />
       <workItem from="1530812043070" duration="2000" />
-      <workItem from="1530812255467" duration="759000" />
+      <workItem from="1530812255467" duration="1359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4149000" />
+    <option name="totallyTimeSpent" value="4749000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info anchor="bottom" id="TODO" order="6" />

@@ -1,9 +1,8 @@
 <?php session_start();
-require('core/autoloader.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="fr">
 
 
 <head>
@@ -14,7 +13,7 @@ require('core/autoloader.php');
     <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
     <title>Ajouter un véhicule</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
     <style>
         .loader {
             position: fixed;
@@ -49,76 +48,76 @@ require('core/autoloader.php');
                 <div class="circle-clipper left">
                     <div class="circle"></div>
                 </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
 
             <div class="spinner-layer spinner-red">
                 <div class="circle-clipper left">
                     <div class="circle"></div>
                 </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
 
             <div class="spinner-layer spinner-yellow">
                 <div class="circle-clipper left">
                     <div class="circle"></div>
                 </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
 
             <div class="spinner-layer spinner-green">
                 <div class="circle-clipper left">
                     <div class="circle"></div>
                 </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div id="app">
-<?php include('includes/sidebar.php'); ?>
-<!--Sidebar End-->
-<div class="has-sidebar-left">
-    <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-            <div class="search-bar">
-                <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
-                       placeholder="start typing...">
+    <?php include('../includes/sidebar.php'); ?>
+    <!--Sidebar End-->
+    <div class="has-sidebar-left">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+                    <div class="search-bar">
+                        <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                               placeholder="start typing...">
+                    </div>
+                    <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+                       aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+                </div>
             </div>
-            <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
-               aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
         </div>
-    </div>
-</div>
-    <div class="sticky">
-        <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue accent-3">
-            <div class="relative">
-                <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle">
-                    <i></i>
-                </a>
+        <div class="sticky">
+            <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue accent-3">
+                <div class="relative">
+                    <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle">
+                        <i></i>
+                    </a>
+                </div>
+                <!--Top Menu Start -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages-->
+
+                </div>
+                </li>
+                </ul>
             </div>
-            <!--Top Menu Start -->
-<div class="navbar-custom-menu">
-    <ul class="nav navbar-nav">
-        <!-- Messages-->
-        
-            </div>
-        </li>
-    </ul>
-</div>
         </div>
     </div>
 </div>
@@ -129,17 +128,17 @@ require('core/autoloader.php');
                 <div class="col">
                     <h4>
                         <i class="icon-package"></i>
-                       Ajouter un véhicule
+                        Ajouter un véhicule
                     </h4>
                 </div>
             </div>
             <div class="row">
                 <ul class="nav responsive-tab nav-material nav-material-white">
                     <li>
-                        <a class="nav-link" href="list_vehicules.php"><i class="icon icon-list"></i>Tout les véhicules</a>
+                        <a class="nav-link" href="list_users.php"><i class="icon icon-list"></i>Tout les utilisateurs</a>
                     </li>
                     <li>
-                        <a class="nav-link active" href="add-vehicule.php"><i
+                        <a class="nav-link active" href="#"><i
                                 class="icon icon-plus-circle"></i> Ajoutez un véhicule</a>
                     </li>
                     <li>
@@ -151,109 +150,95 @@ require('core/autoloader.php');
     </header>
     <div class="container-fluid animatedParent animateOnce my-3">
         <div class="animated fadeInUpShort">
-                <div class="row">
-                    <div class="col-md-8 ">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <form method="post" action="core/services/services.php?action=addVehicule" enctype="multipart/form-data">
-                                <label for="validationCustom01">Constructeur</label>
-        <?php
-        $vh = new VehiculeManager();
-        echo $vh->getConstructSelect()
-         ?> 
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                 <label for="validationCustom01">Modèle</label>
-                                 <div id="modelecontainer">
-                                     <select class="form-control custom-select" id="modele" name="modele">
-                                       <?php
-                                       echo $vh->getModeleSelect();
-                                        ?>
-                                     </select>
-                                 </div>
-                            
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="category">Garage</label>
-                                <!--<input type="text" class="form-control"  placeholder="Mobile Phones" required>-->
-                               <?php echo $vh->getGarageSelect() ?>
-                                <div class="invalid-feedback">
-                                    Please provide a valid category.
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="validationCustom04">Prix d'achat</label>
-                                <input type="text" name="achat_price"class="form-control" id="validationCustom04" placeholder="3500 €"
+
+            <div class="row">
+                <div class="col-md-8 ">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <form method="post" action="../core/services/users-services.php?action=addUser" enctype="multipart/form-data">
+                                <label for="validationCustom01">Email : </label>
+                                <input type="text" name="email"class="form-control" id="validationCustom04" placeholder="johndoe@doe.com"
                                        required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid price.
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="sku">Prix de revente</label>
-                                <input type="text" name="vente_price" class="form-control" id="" placeholder="8900 €" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid sku.
-                                </div>
-                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="productDetails">Information complémentaires</label>
-                            <textarea  name="other" class="form-control p-t-40" id="productDetails"
-                                      placeholder="L'état de la voiture, ou quelque remarque." rows="17" required></textarea>
-                            <div class="invalid-feedback">
-                                Décrire l'êtat
-                            </div>
-                        </div>
-                       
-                        <script>
-                            // Example starter JavaScript for disabling form submissions if there are invalid fields
-                            (function () {
-                                "use strict";
-                                window.addEventListener("load", function () {
-                                    var form = document.getElementById("needs-validation");
-                                    form.addEventListener("submit", function (event) {
-                                        if (form.checkValidity() == false) {
-                                            event.preventDefault();
-                                            event.stopPropagation();
-                                        }
-                                        form.classList.add("was-validated");
-                                        var editorElement = document.getElementById("productDetails");
-                                        if (editorElement.value == '') {
-                                            editorElement.parentNode.classList.add("is-invalid");
-                                            editorElement.parentNode.classList.remove("is-valid");
-                                        } else {
-                                            editorElement.parentNode.classList.remove("is-invalid");
-                                            editorElement.parentNode.classList.add("is-valid");
-                                        }
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom01">Password : </label>
+                            <div id="modelecontainer">
 
-                                    }, false);
-                                }, false);
-                            }());
-                        </script>
+                                <input type="text" name="password"class="form-control" id="validationCustom04" placeholder="*************"
+                                       required>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card mt-4">
-                            <h6 class="card-header white">Publiez</h6>
-                            <div class="card-body text-success">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="category">Firstname</label>
+                            <!--<input type="text" class="form-control"  placeholder="Mobile Phones" required>-->
+                            <input type="text" name="firstname"class="form-control" id="validationCustom04" placeholder="John   "
+                                   required>
+                            <div class="invalid-feedback">
+                                Please provide a valid category.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationCustom04">Lastname</label>
+                            <input type="text" name="lastname"class="form-control" id="validationCustom04" placeholder="Doe"
+                                   required>
+                            <div class="invalid-feedback">
+                                Please provide a valid price.
+                            </div>
+                        </div>
 
-                                <div class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                                    <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-                                    <div class="invalid-feedback">Example invalid feedback text</div>
-                                </div>
-                                 <label for="sku">Plaque d'immatriculation</label>
-                                <input type="text" class="form-control" id="sku" name="immatriculation" placeholder="DS-782-AS" required>
+                    </div>
+
+
+                    <script>
+                        // Example starter JavaScript for disabling form submissions if there are invalid fields
+                        (function () {
+                            "use strict";
+                            window.addEventListener("load", function () {
+                                var form = document.getElementById("needs-validation");
+                                form.addEventListener("submit", function (event) {
+                                    if (form.checkValidity() == false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add("was-validated");
+                                    var editorElement = document.getElementById("productDetails");
+                                    if (editorElement.value == '') {
+                                        editorElement.parentNode.classList.add("is-invalid");
+                                        editorElement.parentNode.classList.remove("is-valid");
+                                    } else {
+                                        editorElement.parentNode.classList.remove("is-invalid");
+                                        editorElement.parentNode.classList.add("is-valid");
+                                    }
+
+                                }, false);
+                            }, false);
+                        }());
+                    </script>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mt-4">
+                        <h6 class="card-header white">Publiez</h6>
+                        <div class="card-body text-success">
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                                <label class="custom-control-label" for="customControlValidation1">Confirmer l'ajout</label>
+                                <div class="invalid-feedback">Example invalid feedback text</div>
                             </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-primary" type="submit">Ajouter</button>
+
+
+                        </div>
+
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary" type="submit">Ajouter l'utilisateur</button>
                             </form>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
         </div>
     </div>
@@ -420,24 +405,24 @@ require('core/autoloader.php');
 <div class="control-sidebar-bg shadow white fixed"></div>
 </div>
 <!--/#app -->
-<script src="assets/js/app.js"></script>
+<script src="../assets/js/app.js"></script>
 <!--
 --- Footer Part - Use Jquery anywhere at page.
 --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
 -->
 <script>
-$("#constructeur").on("change", function(){
- //   alert('constructeur');
-    $.ajax({
-        url: "core/services/services.php?action=getModeleSelect",
-        data: 'constructeur=' + $("#constructeur").val(),
-        method: 'post',
-        success : function(response){
-            $("#modele").html(response)
-            console.log(response);
-        }
+    $("#constructeur").on("change", function(){
+        alert('constructeur ');
+        $.ajax({
+            url: "core/services.php?action=getModeleSelect",
+            data: 'constructeur=' + $("#constructeur").val(),
+            method: 'post',
+            success : function(response){
+                $("#modele").html(response)
+                console.log(response);
+            }
+        })
     })
-})
 </script>
 <script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
 </body>

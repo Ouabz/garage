@@ -1,6 +1,8 @@
-
+<?php session_start();
+require('core/autoloader.php');
+?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="fr">
 
 
 <head>
@@ -9,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
-    <title>Listes des garages</title>
+    <title>Ajouter un véhicule</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/custom.css">
@@ -134,14 +136,14 @@
             <div class="row">
                 <ul class="nav responsive-tab nav-material nav-material-white">
                     <li>
-                        <a class="nav-link active" href="list_garages.php"><i class="icon icon-list"></i>Tout les garages</a>
+                        <a class="nav-link active" href="#"><i class="icon icon-list"></i>Tout les utilisateurs</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="add-garage.php"><i
-                                class="icon icon-plus-circle"></i> Ajoutez un garage</a>
+                        <a class="nav-link" href="add_user.php"><i
+                                class="icon icon-plus-circle"></i> Ajoutez un utilisateur</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#"><i class="icon icon-trash-can"></i>Véhicule supprimer</a>
+                        <a class="nav-link" href="#"><i class="icon icon-trash-can"></i>Utilisateur supprimer</a>
                     </li>
                 </ul>
             </div>
@@ -153,16 +155,41 @@
                 <div class="row my-3">
                     <div class="col-md-12">
                         <div class="card r-0 shadow">
+                            <div class="table-responsive">
+
+                                <table class="table table-striped table-hover r-0">
+                                    <thead>
+                                    <tr class="no-b">
+                                        <th style="width: 30px">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="checkedAll" class="custom-control-input"><label
+                                                    class="custom-control-label" for="checkedAll"></label>
+                                            </div>
+                                        </th>
+                                        <th>#</th>
+                                        <th>Information</th>
+                                        <th>EMAIL</th>
+                                        <th>Statut</th>
+                                        <th></th>
+                                    </tr>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
 
 
-<div id="messages">
-</div>
+                                    <?php
+
+                                    $vh = new UserManager();
+                                    echo $vh->getUserList();
+                                    ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--Add New Message Fab Button-->
-            </form>
+
             </div>
             <!-- Right Sidebar -->
 
@@ -177,30 +204,11 @@
         --- Footer Part - Use Jquery anywhere at page.
         --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
         -->
-
-        <script>
-            var interval = setInterval(loadAllGarages, 500);
-            function loadAllGarages(){
-                $.ajax({
-                    url:'core/services/services.php',
-                    data:"action=getGaragesList",
-                    method: 'post',
-                    success: function(response){
-                        console.log('success !');
-                       // console.log(response);
-                        $('#messages').html(response);
-                    },
-                    error: function(errormsg){
-                        alert("Erreur find :=>"+errormsg);
-                    }
-                });
-            }
-        </script>
         <script>
             $("#constructeur").on("change", function(){
-                alert('constructeur ');
+
                 $.ajax({
-                    url: "core/services.php?action=getModeleSelect",
+                    url: "core/users-services.php?action=getModeleSelect",
                     data: 'constructeur=' + $("#constructeur").val(),
                     method: 'post',
                     success : function(response){
@@ -209,9 +217,10 @@
                     }
                 })
             })
+            <script>
+
         </script>
+
         <script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
 </body>
-
-<!-- Mirrored from xvelopers.com/demos/html/paper-panel-1.0.7/panel-page-products-create.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Jul 2018 16:26:43 GMT -->
 </html>

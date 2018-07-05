@@ -10,7 +10,7 @@
             </span>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Déconnexion</a>
+                    <a href="deco.php" class="dropdown-item">Déconnexion</a>
                 </div>
             </figure>
         </div>
@@ -26,6 +26,7 @@
                     <li><a href="panel-page-dashboard1-rtl.html"><i class="icon icon-folder5"></i>Changez son email</a>
                     </li>
                     <li><a href="panel-page-dashboard2.html"><i class="icon icon-folder5"></i>Supprimer mon compte</a>
+                    </li>
                     </li>
                 </ul>
             </li>
@@ -48,7 +49,7 @@
                 <ul class="treeview-menu">
                     <li><a href="panel-page-users.html"><i class="icon icon-circle-o"></i>All Users</a>
                     </li>
-                    <li><a href="panel-page-users-create.html"><i class="icon icon-add"></i>Add User</a>
+                    <li><a href="client/add_user.php"><i class="icon icon-add"></i>Add User</a>
                     </li>
                     <li><a href="panel-page-profile.html"><i class="icon icon-user"></i>User Profile </a>
                     </li>

@@ -1,5 +1,4 @@
 <?php session_start();
-require_once('includes/registary.php');
 ?>
 
 <!DOCTYPE html>
@@ -151,12 +150,12 @@ require_once('includes/registary.php');
     </header>
     <div class="container-fluid animatedParent animateOnce my-3">
         <div class="animated fadeInUpShort">
-            <?php var_dump($_SESSION); ?>
+
             <div class="row">
                 <div class="col-md-8 ">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <form method="post" action="core/services.php?action=addGarage" enctype="multipart/form-data">
+                            <form method="post" action="core/services/services.php?action=addGarage" enctype="multipart/form-data">
                                 <label for="validationCustom04">Nom du garage</label>
                                 <input type="text" name="garage_name"class="form-control" id="validationCustom04" placeholder="Louvres"
                                        required>

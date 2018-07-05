@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once('includes/registary.php');  ?>
+<?php require('core/autoloader.php');  ?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php if(empty($_SESSION['email'])){
@@ -11,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
-
+    <title>Paper</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <style>
@@ -137,11 +138,10 @@
                         <span class="icon icon-light-bulb s-48"></span>
                     </div>
                     <div class="sc-counter s-36">
-                        <?php
-                        require('core/VehiculeManager.php');
-                        $vh = new VehiculeManager();
-                        echo $vh->CountVehicule()
-                        ?></div>
+
+
+
+                       </div>
                     <h6 class="counter-title">véhicules</h6>
                 </div>
             </div>
@@ -150,7 +150,9 @@
                     <div class="float-right">
                         <span class="icon icon-target-12 s-48"></span>
                     </div>
-                    <div class="sc-counter s-36"><?= $vh->CountMarque(); ?></div>
+                    <div class="sc-counter s-36 "><?php
+                        $co = new Constructeur();
+                        $co->CountMarque(); ?></div>
                     <h6 class="counter-title">marque</h6>
                 </div>
             </div>
@@ -159,7 +161,7 @@
                     <div class="float-right">
                         <span class="icon icon-trophy7 s-48"></span>
                     </div>
-                    <div class="sc-counter s-36"><?= $vh->CountVehiculeSell() ?></div>
+                    <div class="sc-counter s-36"></div>
                     <h6 class="counter-title">véhicule vendues</h6>
                 </div>
             </div>
@@ -168,7 +170,7 @@
                     <div class="float-right">
                         <span class="icon icon-startup s-48"></span>
                     </div>
-                    <div class="sc-counter s-36"><?= $vh->CountVente(); ?></div>€
+                    <div class="sc-counter s-36"></div>
                     <h6 class="counter-title">de chiffre d'affaire</h6>
                 </div>
             </div>
