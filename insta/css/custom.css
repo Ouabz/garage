@@ -1,0 +1,88 @@
+/** .navbar{
+    background:rgba(79, 160, 110, 0.658);
+}
+
+body{
+    background:rgb(102, 45, 45);
+}
+
+*/
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/**
+ANIMATION CSS
+*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.containpost {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+
+.area {
+  text-align: center;
+  font-size: 6.5em;
+  color: #fff;
+  letter-spacing: -7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: blur 3s ease-out infinite;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;
+  }
+}
+
+
+.description {
+    text-overflow: ellipsis;
+   
+    height: 5px;
+  
+}
+.fixheight {
+    overflow: hidden;
+    height: 150px;
+    text-overflow: ellipsis;
+}
+.card-footer {
+    border-radius: 22px!important;
+    padding-top: 2px!important;
+    margin-top: 12px;
+}
+.text-muted {
+    padding-top: 2px!important;
+}
+.profileband {
+    padding-top: 12px;
+}
+.btn.btn-primary {
+    background: #17a2b8;
+    border: #17a2b8;
+}
+.card.mr-sm-2 {
+    margin-bottom: 20px !important;;
+}

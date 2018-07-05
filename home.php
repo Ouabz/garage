@@ -168,7 +168,7 @@
                     <div class="float-right">
                         <span class="icon icon-startup s-48"></span>
                     </div>
-                    <div class="sc-counter s-36"><?= $vh->CountVente(); ?></div>
+                    <div class="sc-counter s-36"><?= $vh->CountVente(); ?></div>€
                     <h6 class="counter-title">de chiffre d'affaire</h6>
                 </div>
             </div>

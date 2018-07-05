@@ -1,8 +1,23 @@
+/**
+Ces class css me permette de géré le style de mes élements PHP.
+ */
 span.r-3.badge.statutVendu {
     background-color: green;
     color: white;
 }
 span.r-3.badge.statutNon-vendu {
+    background-color: red;
+    color: white;
+}
+
+
+
+span.r-3.badge.statutDisponible {
+    background-color: green;
+    color: white;
+}
+
+span.r-3.badge.statutNon-disponible {
     background-color: red;
     color: white;
 }

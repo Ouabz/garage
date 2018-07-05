@@ -172,12 +172,21 @@ Class VehiculeManager{
         $etat = 1;
         $statut = 1;
         $modele = $pPost['modele'];
-        $query = $this->bdd->prepare('INSERT INTO vehicules (veh_immat,veh_price_achat,	veh_price_vente,veh_poster,veh_mod) VALUES ("'.$plaque.'", "'.$achat_price.'", "'.$vente_price.'", "'.$poster.'", "'.$modele.'")');
+        $garage = $pPost['garage'];
+        $date = date("Y-m-d H:i:s");
+        $query = $this->bdd->prepare('INSERT INTO vehicules (veh_date_post,veh_gar_id,veh_immat,veh_price_achat,veh_price_vente,veh_poster,veh_mod) VALUES ("'.$date.'", "'.$garage.'", "'.$plaque.'", "'.$achat_price.'", "'.$vente_price.'", "'.$poster.'", "'.$modele.'")');
 print_r($pPost);
 $query->execute();
 
 
 
+    }
+    public function addGarage($pPost){
+        $garname = $pPost['garage_name'];
+        $garspace = $pPost['garage_space'];
+
+        $insert = $this->bdd->prepare('INSERT INTO garages (gar_name,gar_space) VALUES ("'.$garname.'", "'.$garspace.'")');
+        $insert->execute();
     }
     public function getModeleSelect(){
     	$constructeur = null;
@@ -208,32 +217,15 @@ $query->execute();
     }
     public function getVehiculeList(){
     	$query = $this->bdd->prepare('SELECT * FROM vehicules');
-    	$join = $this->bdd->prepare('SELECT * FROM vehicules v JOIN modele m ON v.veh_mod = m.mod_id JOIN constructeur c ON m.mod_const_id = c.const_id');
+    	$join = $this->bdd->prepare('SELECT * FROM vehicules v JOIN modele m ON v.veh_mod = m.mod_id JOIN constructeur c ON m.mod_const_id = c.const_id JOIN garages g ON v.veh_gar_id = g.gar_id');
     	$join->execute();
      	$query->execute();
 
     	$results = $join->fetchAll();
     	 // $response = 'Partie 1';
+        //$benef = ($results['veh_price_achat']) - ($results['veh_price_vente']);
     	foreach($results as $vehicule){
-//    		$response.='            <tr class="no-b">
-//                                        <td class="w-10">
-//                                            <img src="assets/img/demo/shop/s1.png" alt="">
-//                                        </td>
-//                                        <td>
-//                                            <h6>'.$vehicule['veh_immat'].'</h6>
-//                                            <small class="text-muted">'.$vehicule['const_name'].' '.$vehicule['mod_name'].'</small>
-//                                        </td>
-//                                        <td>8000€</td>
-//
-//                                        <td><span class="badge badge-success">Disponible</span></td>
-//                                        <td>
-//                                            <span><i class="icon icon-data_usage"></i> 01/07/2018</span><br>
-//                                            <span><i class="icon icon-timer"></i> 03/07/2018</span>
-//                                        </td>
-//                                        <td>
-//                                            <a class="btn-fab btn-fab-sm btn-primary shadow text-white"><i class="icon-pencil"></i></a>
-//                                        </td>
-//                                    </tr>';
+         $benef =  $vehicule['veh_price_vente'] - $vehicule['veh_price_achat'];
             $response.=' <tr>
                                             <td>
                                                 <div class="custom-control custom-checkbox">
@@ -242,7 +234,7 @@ $query->execute();
                                                             class="custom-control-label" for="user_id_1"></label>
                                                 </div>
                                             </td>
-
+                                                    <td>'.$vehicule['veh_id'].'</td>
                                             <td>
                                                 <div class="avatar avatar-md mr-3 mt-1 float-left">
                                                     <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
@@ -259,12 +251,15 @@ $query->execute();
                                             <td>'.$vehicule['veh_price_vente'].' €</td>
                                             
 
-                                            <td>+92 333 123 136</td>
-                                            <td>'.$vehicule['veh_etat'].'
+                                            <td>'.$vehicule['gar_name'].'</td>
+                                            <td>'.$benef.'</td>
+                                            <td>'.$vehicule['veh_etat'].'</td>
                                             <td><span class="r-3 badge statut'.$vehicule['veh_statut'].'">'.$vehicule['veh_statut'].'</span></td>
                                             <td>
-                                                <a href="panel-page-profile.html"><i class="icon-eye mr-3"></i></a>
+                                           <a href="core/services.php?action=SetVendu" <button type="submit">Vendu?</button></a>
+                                                </form>
                                                 <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
+                                                </form>
                                             </td>
                                         </tr>';
      //       $response.='Re Teste';
@@ -273,6 +268,63 @@ $query->execute();
     	 return $response;
     }
 
+    public function getGaragesList(){
+        $query = $this->bdd->prepare('SELECT * FROM garages');
+        $join = $this->bdd->prepare('SELECT * FROM vehicules v JOIN modele m ON v.veh_mod = m.mod_id JOIN constructeur c ON m.mod_const_id = c.const_id');
+        $join->execute();
+        $query->execute();
+
+        $results = $query->fetchAll();
+        // $response = 'Partie 1';
+        foreach($results as $garage){
+
+            $response.=' <tr>
+                                            <td>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input checkSingle"
+                                                           id="user_id_1" required><label
+                                                            class="custom-control-label" for="user_id_1"></label>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="avatar avatar-md mr-3 mt-1 float-left">
+                                                    <span class="avatar-letter avatar-letter-a  avatar-md circle"></span>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <strong>'.$garage['gar_name'].'</strong>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </td>
+
+                                            <td>'.$garage['gar_space'].'</td>
+                                            <td> 10 places réstantes</td>
+                                            
+
+                                         
+                                            <td>Bonne état
+                                            <td><span class="r-3 badge statut'.$garage['gar_statut'].'">'.$garage['gar_statut'].'</span></td>
+                                            <td>
+                                                <a href="panel-page-profile.html"><i class="icon-done_all"></i></a>
+                                                <a href="panel-page-profile.html"><i class="icon-pencil"></i></a>
+                                            </td>
+                                        </tr>';
+            //       $response.='Re Teste';
+        }
+        //	 $response .= 'Fin du code';
+        return $response;
+    }
+
+    /**
+     * Cette function permet de passer un véhicule de non vendu à vendu
+     */
+    public function SetVendu() {
+        $update = $this->bdd->prepare('UPDATE vehicules SET veh_statut = "Vendu" WHERE veh_id = ');
+
+        $update->execute();
+    }
     /**
      *
      * La function CountVehicule permet de compté le nombre de véhicule.
@@ -299,6 +351,7 @@ $query->execute();
                $nb = $query->rowCount();
                return $nb;
     }
+
     /**
      *
      * La function CountVehiculeSell permet de compté le nombre de véhicule VENDU.
@@ -336,7 +389,7 @@ $query->execute();
 
     public function CountVente()
     {
-        $req = $this->bdd->prepare('SELECT SUM(veh_price_vente) AS nb2 FROM vehicules WHERE veh_statut = 2');
+        $req = $this->bdd->prepare('SELECT SUM(veh_price_vente) AS nb2 FROM vehicules WHERE veh_statut = "Vendu"');
         $req->execute();
         $fetch = $req->fetch();
 
@@ -368,6 +421,18 @@ $query->execute();
             echo $response;
            // return $response;  
             
+    }
+    public function getGarageSelect(){
+        $query = $this->bdd->prepare('SELECT * FROM garages');
+        $query->execute();
+        $results = $query->fetchAll();
+        $response = '<select class="form-control custom-select" id="garage" name="garage">';
+
+        foreach($results as $garage){
+            $response.='<option value="'.$garage['gar_id'].'">'.$garage['gar_name'].'</option>';
+        }
+        $response .= '</select>';
+        echo $response;
     }
      /**
      * Cette fonction permet a select une category
@@ -531,28 +596,6 @@ public function addNew($pPost, $pFIles){
          $query->execute();
  
      }
-     public function getNew(){
-        $query = $this->bdd->prepare('SELECT * FROM news');
-        $query->execute();
-        //
-        $results = $query->fetchAll();
-        $response = '';
-        //
-
-        foreach($results as $artworklist){
-            $response.=' <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">'.$news['new_title'].'"</h4>
-
-            <h5 class="card-title">'.$artworklist['art_title'].'</h5>';
-            $response.='<p class="card-text description"><div class="fixheight">'.$artworklist['art_desc'].'</p></div><a href="/insta/'.$artworklist['art_id'].'" class="btn btn-primary">Visit</a>  </div>
-            </div>';
-        }
-
-        //
-        $response .= '  
-         ';
-        return $response;
-}
       public function getArtistid($id2){
             $query = $this->bdd->prepare('SELECT * FROM artist WHERE id = ?');
             $query->execute(array($id));

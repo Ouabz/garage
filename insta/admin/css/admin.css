@@ -1,0 +1,13 @@
+header{
+    color: rgba(79, 160, 110, 0.658);
+    background:blue;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}

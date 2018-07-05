@@ -135,10 +135,10 @@
             <div class="row">
                 <ul class="nav responsive-tab nav-material nav-material-white">
                     <li>
-                        <a class="nav-link" href="panel-page-products.html"><i class="icon icon-list"></i>Tout les véhicules</a>
+                        <a class="nav-link" href="list_vehicules.php"><i class="icon icon-list"></i>Tout les véhicules</a>
                     </li>
                     <li>
-                        <a class="nav-link active" href="panel-page-products-create.html"><i
+                        <a class="nav-link active" href="add-vehicule.php"><i
                                 class="icon icon-plus-circle"></i> Ajoutez un véhicule</a>
                     </li>
                     <li>
@@ -179,12 +179,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="category">Garage</label>
                                 <!--<input type="text" class="form-control"  placeholder="Mobile Phones" required>-->
-                                <select id="category" class="custom-select form-control" required>
-                                    <option value="0">Selectionner un garage</option>
-                                    <option value="1">Paris</option>
-                                    <option value="2">Lyon</option>
-                                    <option value="3">Marseille</option>
-                                </select>
+                               <?php echo $vh->getGarageSelect() ?>
                                 <div class="invalid-feedback">
                                     Please provide a valid category.
                                 </div>
@@ -207,7 +202,7 @@
                         </div>
                         <div class="form-group">
                             <label for="productDetails">Information complémentaires</label>
-                            <textarea  name="other" class="form-control p-t-40 editor" id="productDetails"
+                            <textarea  name="other" class="form-control p-t-40" id="productDetails"
                                       placeholder="L'état de la voiture, ou quelque remarque." rows="17" required></textarea>
                             <div class="invalid-feedback">
                                 Décrire l'êtat

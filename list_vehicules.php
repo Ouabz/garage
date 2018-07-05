@@ -154,7 +154,7 @@
                     <div class="col-md-12">
                         <div class="card r-0 shadow">
                             <div class="table-responsive">
-                                <form>
+
                                     <table class="table table-striped table-hover r-0">
                                         <thead>
                                         <tr class="no-b">
@@ -164,13 +164,16 @@
                                                             class="custom-control-label" for="checkedAll"></label>
                                                 </div>
                                             </th>
+                                            <th>#</th>
                                             <th>NOM</th>
                                             <th>PRIX D'ACHAT</th>
                                             <th>PRIX DE VENTE</th>
-                                            <th>VENDEUR</th>
+                                            <th>GARAGE</th>
+                                            <th>BENEF</th>
                                             <th>ETAT</th>
                                             <th>Statut</th>
                                             <th></th>
+                                        </tr>
                                         </tr>
                                         </thead>
 
@@ -216,9 +219,10 @@ $("#constructeur").on("change", function(){
         }
     })
 })
+    <script>
+
+    </script>
 </script>
 <script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
 </body>
-
-<!-- Mirrored from xvelopers.com/demos/html/paper-panel-1.0.7/panel-page-products-create.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 02 Jul 2018 16:26:43 GMT -->
 </html>
