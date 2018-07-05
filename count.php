@@ -2,7 +2,7 @@
 <html>
 <b> Vehicule total: </b>
 <?php
-require('core/VehiculeManager.class.php');
+require('core/autoloader.php');
 $vh = new VehiculeManager();
 echo $vh->CountVehicule()
 ?>
@@ -16,7 +16,7 @@ echo $vh->CountVehiculeSell()
 echo $vh->CountAchat();
 ?>
 <b> Nombre de marque : </b>
-<?php $vh->CountMarque() ?>
+<?php $co->CountConst() ?>
 <b> Nombre de benef : </b>
 <?php $vh->CountVente() ?>
 </html>

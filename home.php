@@ -151,8 +151,8 @@
                         <span class="icon icon-target-12 s-48"></span>
                     </div>
                     <div class="sc-counter s-36 "><?php
-                        $co = new Constructeur();
-                        $co->CountMarque(); ?></div>
+                        $co = new Constructeurbuild();
+                        $co->CountConst(); ?></div>
                     <h6 class="counter-title">marque</h6>
                 </div>
             </div>

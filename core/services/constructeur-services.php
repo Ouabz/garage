@@ -19,9 +19,10 @@ switch ($action) {
     /**
      *  CountMarque permet de comtpé le nombre de
      */
-    case 'CountMarque':
-        $co = new Constructeur();
-        $co->CountMarque();
+    case 'CountConst':
+        $co = new Constructeurbuild();
+        $co->CountConst();
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
         break;
 }
 ?>

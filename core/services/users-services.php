@@ -28,5 +28,6 @@ switch ($action) {
     case 'listUser';
     $vh = new UserManager();
     $vh->getUserList();
+    break;
 }
 ?>

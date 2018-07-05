@@ -6,7 +6,7 @@
  * Time: 14:11
  */
 
-class Constructeur
+class Constructeurbuild
 {
     // Propr
     private $bdd;
@@ -19,10 +19,10 @@ class Constructeur
     }
     // meth
     //get set
-    public function CountMarque() {
+    public function CountConst() {
         $query = $this->bdd->prepare('SELECT * FROM constructeur');
         $query->execute();
-      //  $nb = $query->rowCount();
+       $nb = $query->rowCount();
         $nb = 15;
         return $nb;
     }
