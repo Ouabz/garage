@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
-    <title>Paper</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <style>
